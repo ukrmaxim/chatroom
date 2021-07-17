@@ -6,3 +6,6 @@ force:
 
 master:
 	git push origin master
+
+db:
+	rails db:migrate
