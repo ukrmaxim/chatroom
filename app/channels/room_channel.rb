@@ -6,13 +6,13 @@ class RoomChannel < ApplicationCable::Channel
 
     stream_from "room_channel_#{@room.id}"
 
-    # speak('message' => '* * * joined the room * * *')
+    speak('message' => '* * * joined the room * * *')
   end
 
   def unsubscribed
     logger.info 'Unsubscribed from RoomChannel'
 
-    # speak('message' => '* * * left the room * * *')
+    speak('message' => '* * * left the room * * *')
   end
 
   def speak(data)
