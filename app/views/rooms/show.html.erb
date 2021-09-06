@@ -1,5 +1,9 @@
 <h1>Room <%= @room.id %></h1>
-<%= link_to "Leave", root_path, data: { turbolinks: false } %>
+<%= link_to "Leave", root_path, class: "button btn btn-primary", data: { turbolinks: false } %>
+<% if current_user == @room.user %>
+  <%= link_to "Delete room", room_path(@room.token), class: "button btn btn-danger",
+      method: :delete, data: { confirm: "Are you sure you want to delete the room?" } %>
+<% end %>
 <p id="notice"><%= notice %></p>
 <div class="messages">
   <div class="messages-inner" id="messages" data-room-id="<%= @room.id %>">

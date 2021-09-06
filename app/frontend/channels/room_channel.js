@@ -8,15 +8,12 @@ const createRoomChannel = room_id => {
     room_id: room_id
   }, {
     connected() {
-      console.log('Connected to the RoomChannel!')
     },
 
     disconnected() {
-      console.log('Disconnected from the RoomChannel!')
     },
 
     received(data) {
-      console.log('Received data: ' + data['message'])
       $('#messages').append(data['message'])
       scroll();
     },
